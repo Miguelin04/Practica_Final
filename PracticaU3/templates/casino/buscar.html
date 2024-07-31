@@ -1,0 +1,79 @@
+{% extends "templateL.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2 class="text-white m-3">Búsqueda</h2>
+<div class="booking-form-body">
+    <div class="text-center w-100">
+        <h4 class="text-white">Parámetro de Búsqueda de Negocios</h4>
+    </div>
+    <form method="post" action="/casinos/buscar">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="row">
+                <div class="form-group mx-2">
+                    <select id="select-campo" name="select-campo" class="form-select" aria-label="Opciones">
+                        <option value="_nombre">Nombre</option>
+                        <option value="_direccion">Direccion</option>
+                        <option value="_horario">Horario</option>
+                    </select>
+                </div>
+                <div class="form-group mx-2">
+                    <select id="select-metodo" name="select-metodo" class="form-select" aria-label="Método de búsqueda">
+                        <option value="binaria">Búsqueda Binaria</option>
+                        <option value="secuencial">Búsqueda Secuencial</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input id="input-campo" name="input-campo" type="text" class="form-control" placeholder="" required>
+                </div>
+            </div>
+            <button class="btn btn-warning" type="submit">BUSCAR</button>
+        </div>
+    </form>
+    <h6 class="text-white">{{ mensaje }}</h6>
+    <script>
+    document.getElementById('select-campo').addEventListener('change', function() {
+        var inputCampo = document.getElementById('input-campo');
+        switch (this.value) {
+            case '_nombre':
+                inputCampo.type = 'text';
+                inputCampo.placeholder = 'nombre';
+                break;
+            case '_direccion':
+                inputCampo.type = 'text';
+                inputCampo.placeholder = 'direccion';
+                break;
+            case '_horario':
+                inputCampo.type = 'text';
+                inputCampo.placeholder = 'horario';
+                break;
+        }
+    });
+    </script>
+    <table id="tabla" class="table text-white">
+        <thead>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Horario</th>
+        </thead>
+        <tbody>
+            {% if lista %}
+            {% for negocio in lista %}
+                <tr>
+                    <td>{{ negocio._id }}</td>
+                    <td>{{ negocio._nombre }}</td>
+                    <td>{{ negocio._direccion }}</td>
+                    <td>{{ negocio._horario }}</td>
+                </tr>
+            {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4">No se encontraron resultados</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

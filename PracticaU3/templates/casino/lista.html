@@ -1,0 +1,44 @@
+{% extends "templateL.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2 class="text-white">Lista de casinos</h2>
+<div class="booking-form-body">
+    <a href="/casinos/agregar" class="btn btn-primary">AGREGAR</a>
+    <a href="/casinos/grafo_negocio"  target="_blank"   class="btn btn-success">VER GRAFO</a>
+    <a href="/casinos/grafo_ver_admin" class="btn btn-danger">Administrar grafo</a>
+    <a href="/casinos/ruta" class="btn btn-warning">Ruta mas corta</a>
+    <table id="tabla" class="table text-white">
+        <thead>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Horario</th>
+            <th>Longitud</th>
+            <th>Latitud</th>
+            <th>Actions</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for item in lista %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.direccion}}</td>
+                    <td>{{item.horario}}</td>
+                    <td>{{item.longitud}}</td>
+                    <td>{{item.latitud}}</td>
+                    <td><a href="/casinos/editar/{{item.id}}" class="btn btn-info">Modificar</a></td>
+                    <td>
+                        <form action="/casinos/eliminar" method="post">
+                            <input type="hidden" name="id" value="{{ item.id }}">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

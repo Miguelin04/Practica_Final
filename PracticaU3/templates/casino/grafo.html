@@ -1,0 +1,82 @@
+{% extends "templateL.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2 class="text-white">GRAFO</h2>
+<div class="booking-form-body">
+    <div class="row" style="margin: 20px;">
+        <div class="card" style="padding: 20px; background-color: rgba(255, 255, 255, 0.95); width: 100%;">
+            <div class="card-header">
+                <h5>Agregar adyacencias</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Mensajes Flash -->
+                    {% with messages = get_flashed_messages(category_filter=['error', 'success'], with_categories=true) %}
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for category, message in messages %}
+                                    <p class="text-dark">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <form id="form" class="row" action="/casinos/crear_ady" method="post" role="form">
+                        <div class="col-lg-6 col-12">
+                            <span>Origen:</span>
+                            <select id="origen" class="form-control" name="origen">
+                                {% for item in lista %}
+                                    <option value="{{item.nombre}}">{{item.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <span>Destino:</span>
+                            <select id="destino" class="form-control" name="destino">
+                                {% for item in lista %}
+                                    <option value="{{item.nombre}}">{{item.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-lg-4 col-12">
+                                <button id="boton" type="submit" class="btn btn-success">Agregar</button>
+                            </div>
+                            <div class="col-lg-4 col-12">
+                                <a href="/casinos" class="btn btn-danger">Volver</a>
+                            </div>
+                            <div class="col-lg-4 col-12">
+                                <a href="/casinos/reiniciar" class="btn btn-warning">Reiniciar</a>
+                            </div>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <table id="tabla" class="table text-white" cellpadding="10" style="margin-left: 1%;">
+        <thead>
+            <th width="150">-----</th>
+            {% for item in lista %}
+            <th>{{item.nombre}}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% for item in lista %}
+                <tr>
+                    <td>{{item.nombre}}</td>
+                    {% for adys in matris[loop.index0] %}
+                        <td>
+                            {% if adys != "-----" %}
+                                {{ "{:.2f}".format(adys) }} km
+                            {% else %}
+                                {{ adys }}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends "templateL.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="booking-form-body">
+    <h2 class="text-white" style="font-weight: bold; text-align: center;">La Ruta Más Corta</h2>
+    <div class="card shadow-lg border-0 rounded-lg" style="max-width: 100%; margin: 0 auto; background-color: rgba(255, 255, 255, 0.9);">
+        <div class="card-header text-white text-center">
+        </div>
+       
+        <div class="card-body bg-transparent">
+            <form action="/casinos/ruta" method="post">
+                <div class="row">
+                    <!-- Campo de selección de origen -->
+                    <div class="col-md-4 mb-3">
+                        <label for="origen" class="form-label">Origen:</label>
+                        <select id="origen" name="origen" class="form-select form-select-lg">
+                            {% for item in lista %}
+                            <option value="{{ item.nombre }}">{{ item.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- Campo de selección de destino -->
+                    <div class="col-md-4 mb-3">
+                        <label for="destino" class="form-label">Destino:</label>
+                        <select id="destino" name="destino" class="form-select form-select-lg">
+                            {% for item in lista %}
+                            <option value="{{ item.nombre }}">{{ item.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- Campo de selección de método -->
+                    <div class="col-md-4 mb-3">
+                        <label for="metodo" class="form-label">Método:</label>
+                        <select id="metodo" name="metodo" class="form-select form-select-lg">
+                            <option value="dijkstra">Dijkstra</option>
+                            <option value="floyd">Floyd</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-lg mx-3">Calcular</button>
+                    <a href="/casinos" class="btn btn-danger btn-lg mx-3">Regresar</a>
+                </div>
+                        
+            </form>
+        </div>
+        {% if path %}
+        <div class="card-footer bg-transparent">
+            <div class="result-section">
+                <div class="result-box">
+                    <h3 class="text-dark text-center">Camino Más Corto Hasta: {{ path[-1] }}</h3>
+                    <p><strong class="badge">Origen:</strong> <span class="highlight">{{ path[0] }}</span></p>
+                    <p><strong class="badge">Destino:</strong> <span class="highlight">{{ path[-1] }}</span></p>
+                    <p><strong class="badge">Distancia:</strong> <span class="highlight">{{ distance | round(2) }} km</span></p>
+                </div>
+                <hr>
+                <h3 class="text-dark text-center">Camino Más Corto:</h3>
+                <div class="route-container">
+                    {% for node in path[:-1] %}
+                    <div class="route-item">
+                        <strong>{{ node }}</strong> <span class="route-arrow">→</span>
+                    </div>
+                    {% endfor %}
+                    <div class="route-item"><strong>{{ path[-1] }}</strong></div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/casinos/ruta" class="btn btn-secondary btn-lg">Regresar</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Añadir estilos personalizados -->
+<style>
+body {
+    background-color: #f5f5f5; /* Color de fondo más claro */
+    font-family: 'Times New Roman', sans-serif; /* Cambiado a Arial */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+.card {
+    font-weight: bold;
+    border-radius: 15px; /* Bordes más suaves */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+}
+
+.form-select {
+    border-radius: 8px; /* Bordes redondeados más sutiles */
+    padding: 10px;
+    font-size: 1em; /* Tamaño de fuente aumentado */
+    border: 1px solid #ddd; /* Borde gris claro */
+    background-color: #fff; /* Fondo blanco */
+    width: 100%; /* Hacer más largo el cuadro de selección */
+}
+
+.btn-danger {
+    font-size: 1.2em;
+    background-color: #dc3545; /* Color rojo */
+    border-color: #dc3545;
+    border-radius: 8px;
+    padding: 12px 25px; /* Relleno más amplio */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Rojo más oscuro en hover */
+    border-color: #bd2130; /* Borde más oscuro en hover */
+}
+
+.result-section {
+    margin-top: 20px;
+}
+
+.result-section h3 {
+    margin-bottom: 20px; /* Mayor margen inferior */
+    color: #333; /* Color de texto gris oscuro */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+    font-weight: bold; /* Negrita */
+}
+
+.result-section p {
+    margin: 10px 0; /* Mayor margen vertical */
+    color: #333;
+    font-size: 0.9em; /* Tamaño de fuente reducido */
+    font-weight: bold; /* Negrita para etiquetas */
+}
+
+.result-section hr {
+    margin: 20px 0;
+    border-color: #333; /* Línea horizontal negra */
+}
+
+.result-box {
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados más suaves */
+    background-color: #e9ecef; /* Fondo gris claro */
+    color: #333; /* Color de texto gris oscuro */
+    font-size: 1.5em; /* Texto un poco más grande */
+}
+
+.highlight {
+    background-color: #fff; /* Fondo blanco */
+    padding: 2px; /* Mayor relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente aumentado */
+}
+
+.route-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px; /* Margen superior más pequeño */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+}
+
+.route-item {
+    margin: 0 10px;
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px 15px;
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.route-item:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0; /* Fondo gris claro en hover */
+}
+
+.route-arrow {
+    font-size: 1.5em; /* Tamaño de fuente aumentado */
+    color: #007bff; /* Color azul para la flecha */
+}
+</style>
+{% endblock %}
