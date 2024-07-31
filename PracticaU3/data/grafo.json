@@ -1,0 +1,160 @@
+{
+    "vertices": 15,
+    "aristas": 15,
+    "etiquetas": [
+        "Casino Sueno Esmeralda",
+        "Casino Cupula Rubi",
+        "Casino Cortina Exaltado",
+        "El palacio de las rutas",
+        "Apuestas al azar",
+        "Casino One Millon",
+        "Casino de Monte Carlo ",
+        "El apostador",
+        "El buen vivir",
+        "El Dollar",
+        "El Buen Vino",
+        "Casino Buen Aventura",
+        "The Venetian",
+        "Casino de Barcelona",
+        "Casino Bellagio"
+    ],
+    "etiquetasVertice": {
+        "Casino Sueno Esmeralda": 0,
+        "Casino Cupula Rubi": 1,
+        "Casino Cortina Exaltado": 2,
+        "El palacio de las rutas": 3,
+        "Apuestas al azar": 4,
+        "Casino One Millon": 5,
+        "Casino de Monte Carlo ": 6,
+        "El apostador": 7,
+        "El buen vivir": 8,
+        "El Dollar": 9,
+        "El Buen Vino": 10,
+        "Casino Buen Aventura": 11,
+        "The Venetian": 12,
+        "Casino de Barcelona": 13,
+        "Casino Bellagio": 14
+    },
+    "adyacencias": [
+        {
+            "from": 1,
+            "to": 3
+        },
+        {
+            "from": 1,
+            "to": 2
+        },
+        {
+            "from": 1,
+            "to": 8
+        },
+        {
+            "from": 2,
+            "to": 1
+        },
+        {
+            "from": 2,
+            "to": 10
+        },
+        {
+            "from": 3,
+            "to": 1
+        },
+        {
+            "from": 3,
+            "to": 5
+        },
+        {
+            "from": 3,
+            "to": 12
+        },
+        {
+            "from": 4,
+            "to": 5
+        },
+        {
+            "from": 4,
+            "to": 10
+        },
+        {
+            "from": 4,
+            "to": 15
+        },
+        {
+            "from": 5,
+            "to": 3
+        },
+        {
+            "from": 5,
+            "to": 4
+        },
+        {
+            "from": 6,
+            "to": 8
+        },
+        {
+            "from": 6,
+            "to": 11
+        },
+        {
+            "from": 7,
+            "to": 9
+        },
+        {
+            "from": 8,
+            "to": 1
+        },
+        {
+            "from": 8,
+            "to": 6
+        },
+        {
+            "from": 9,
+            "to": 7
+        },
+        {
+            "from": 9,
+            "to": 10
+        },
+        {
+            "from": 10,
+            "to": 2
+        },
+        {
+            "from": 10,
+            "to": 4
+        },
+        {
+            "from": 10,
+            "to": 9
+        },
+        {
+            "from": 11,
+            "to": 6
+        },
+        {
+            "from": 11,
+            "to": 13
+        },
+        {
+            "from": 12,
+            "to": 3
+        },
+        {
+            "from": 13,
+            "to": 11
+        },
+        {
+            "from": 14,
+            "to": 15
+        },
+        {
+            "from": 15,
+            "to": 4
+        },
+        {
+            "from": 15,
+            "to": 14
+        }
+    ]
+}

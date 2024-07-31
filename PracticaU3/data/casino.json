@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "nombre": "Casino Sueno Esmeralda",
+      "direccion": "18 de Noviembre, Los Apuros",
+      "horario": "06:00 - 23:00",
+      "longitud": "-79.20346962594537",
+      "latitud": "-4.006684424441776"
+    },
+    {
+      "id": 2,
+      "nombre": "Casino Cupula Rubi",
+      "direccion": "Pindal, Barrio Los Geranios;Cabo Luis Minacho",
+      "horario": "07:00 - 22:00",
+      "longitud": "-79.20140973973672",
+      "latitud": "-4.014219030450702"
+    },
+    {
+      "id": 3,
+      "nombre": "Casino Cortina Exaltado",
+      "direccion": "J. Lavalleja, Barrio Daniel Alvarez",
+      "horario": "07:00 - 24:00",
+      "longitud": "-79.20674064915137",
+      "latitud": "-4.014781432332433"
+    },
+    {
+      "id": 4,
+      "nombre": "El palacio de las rutas",
+      "direccion": "Jos\u00e9 Antonio Eguig\u00fcren, Barrio 24 de Mayo",
+      "horario": "08:00 - 24:00",
+      "longitud": "-79.19892987830178",
+      "latitud": "-3.996287290367957"
+    },
+    {
+      "id": 5,
+      "nombre": "Apuestas al azar",
+      "direccion": "18 de Noviembre, Barrio Los Geranios;Cabo Luis Minacho",
+      "horario": "03:00 - 24:00",
+      "longitud": "-79.20239832408001",
+      "latitud": "-4.012719594127378"
+    },
+    {
+      "id": 6,
+      "nombre": "Casino One Millon",
+      "direccion": "Manuel Benjamin Carri\u00f3n, UNE I Etapa",
+      "horario": "09:00 - 23:00",
+      "longitud": "-79.21939259913918",
+      "latitud": "-4.02059662341838"
+    },
+    {
+      "id": 7,
+      "nombre": "Casino de Monte Carlo ",
+      "direccion": "Nudo Guagruma, Urbanizaci\u00f3n Asociaci\u00f3n de Profesores UNL",
+      "horario": "02:00 - 23:00",
+      "longitud": "-79.2039938344142",
+      "latitud": "-4.040809515696099"
+    },
+    {
+      "id": 8,
+      "nombre": "El apostador",
+      "direccion": "Jos\u00e9 Mart\u00ednez Ruiz, Los Rosales",
+      "horario": "02:00 - 24:00",
+      "longitud": "-79.19818275759673",
+      "latitud": "-4.023389680811732"
+    },
+    {
+      "id": 9,
+      "nombre": "El buen vivir",
+      "direccion": "\u00c1ngel Felic\u00edsimo Rojas",
+      "horario": "06:00 - 23:00",
+      "longitud": "-79.2225882374977",
+      "latitud": "-4.0222043219817785"
+    },
+    {
+      "id": 10,
+      "nombre": "El Dollar",
+      "direccion": "Pinos, Barrio La Pradera",
+      "horario": "06:00 - 23:00",
+      "longitud": "-79.19934985352808",
+      "latitud": "-4.0114791817583955"
+    },
+    {
+      "id": 11,
+      "nombre": "El Buen Vino",
+      "direccion": "Antonio Jos\u00e9 de Sucre, Barrio Juan de Salinas",
+      "horario": "03:00 - 24:00",
+      "longitud": "-79.20394194313053",
+      "latitud": "-3.9909717536861993"
+    },
+    {
+      "id": 12,
+      "nombre": "Casino Buen Aventura",
+      "direccion": "Av. Jos\u00e9 Mar\u00eda Vivar Castro, PROURVI I Etapa",
+      "horario": "06:00 - 23:00",
+      "longitud": "-79.20346962594537",
+      "latitud": "-4.0238084284277615"
+    },
+    {
+      "id": 13,
+      "nombre": "The Venetian",
+      "direccion": "Av. P\u00edo Jaramillo Alvarado",
+      "horario": "06:00 - 23:00",
+      "longitud": "-79.20484288341778",
+      "latitud": "-4.009424289209153"
+    },
+    {
+      "id": 14,
+      "nombre": "Casino de Barcelona",
+      "direccion": "Jose M. Cabrera",
+      "horario": "07:00 - 24:00",
+      "longitud": "-79.20552951215402",
+      "latitud": "-4.014219030450702"
+    },
+    {
+      "id": 15,
+      "nombre": "Casino Bellagio",
+      "direccion": "Av. Reinaldo Espinoza, Barrio La Argelia",
+      "horario": "03:00 - 20:00",
+      "longitud": "-79.20209636847294",
+      "latitud": "-4.032712768322818"
+    }
+  ]
